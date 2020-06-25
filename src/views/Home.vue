@@ -55,7 +55,6 @@ export default {
       }
       data.push({ id: index + 1, title: title, price: price });
       localStorage.setItem("data", JSON.stringify(data));
-      console.log(data);
     }
   },
   mounted() {
