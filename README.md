@@ -1,5 +1,6 @@
-# cardstore
-
+# Cardstore
+Simple Cardstore for selling magic cards. 
+I used Strapi as content manager  
 ## Project setup
 ```
 npm install
