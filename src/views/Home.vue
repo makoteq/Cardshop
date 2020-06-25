@@ -36,7 +36,8 @@ export default {
   name: "Home",
   data() {
     return {
-      info: null
+      info: null,
+      api_url: process.env.VUE_APP_API_URL || "http://localhost:1337"
     };
   },
   methods: {
@@ -58,9 +59,7 @@ export default {
     }
   },
   mounted() {
-    axios
-      .get("https://cardshop.herokuapp.com/cards")
-      .then(response => (this.info = response.data));
+    axios.get(this.api_url).then(response => (this.info = response.data));
   }
 };
 </script>
