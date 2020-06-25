@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <navbar />
     <router-view />
+    <footerbar />
   </div>
 </template>
+<script>
+// @ is an alias to /src
+import navbar from "@/components/navbar.vue";
+import footerbar from "@/components/footerbar.vue";
 
+export default {
+  name: "App",
+  components: {
+    navbar,
+    footerbar
+  }
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
