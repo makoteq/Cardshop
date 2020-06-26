@@ -8,6 +8,7 @@
 <script>
 // @ is an alias to /src
 import navbar from "@/components/navbar.vue";
+
 import footerbar from "@/components/footerbar.vue";
 
 export default {
