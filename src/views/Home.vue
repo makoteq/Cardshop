@@ -18,7 +18,7 @@
           <br />
           <img
             @click="add(item.id, item.title, item.price)"
-            style="cursor:pointer;"
+            class="addtocart"
             src="../assets/shopping-cart.svg"
             width="40"
             alt=""
@@ -105,6 +105,17 @@ export default {
   transition: all 0.4s;
   &:focus {
     outline: 0;
+  }
+}
+.addtocart {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  width: 50px;
+  border-radius: 15px;
+  padding: 5px;
+  &:active {
+    transform: scale(1.2);
+    background-color: #ffca19;
   }
 }
 </style>
