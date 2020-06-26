@@ -38,7 +38,7 @@ export default {
   methods: {
     clearStortage() {
       localStorage.clear();
-      location.reload();
+      this.info = JSON.parse(localStorage.getItem("data"));
     },
     send() {
       window.open(
