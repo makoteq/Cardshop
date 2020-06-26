@@ -53,6 +53,9 @@ export default {
     if (this.info != null) {
       this.info.forEach(element => {
         this.fullprice = this.fullprice + element.price;
+        let price = this.fullprice.toFixed(2);
+        console.log(price);
+        this.fullprice = parseFloat(price);
       });
     }
     console.log(this.info);
