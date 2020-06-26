@@ -1,6 +1,0 @@
-[build]
-  publish = "dist/"
-  command = "npm run build "
-
-[template.environment]
- VUE_APP_API_URL= "https://cardshop.herokuapp.com/cards"
