@@ -39,6 +39,7 @@ export default {
     clearStortage() {
       localStorage.clear();
       this.info = JSON.parse(localStorage.getItem("data"));
+      this.fullprice = 0;
     },
     send() {
       window.open(
