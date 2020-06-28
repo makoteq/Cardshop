@@ -15,7 +15,8 @@
         <div class="half">
           <span class="header">{{ item.title }}</span
           ><br />
-          <span class="price">{{ item.price }}zł</span>
+          <span class="price">{{ item.price }}zł</span><br />
+          <span class="qty"> Quantity:{{ item.qty }}</span>
           <br />
           <img
             @click="add(item.id, item.title, item.price)"
@@ -96,6 +97,12 @@ export default {
   text-align: left;
   min-height: 200px;
   margin: 0 auto;
+}
+.qty {
+  font-size: 1em;
+  font-weight: bold;
+  color: #000000;
+  text-align: right;
 }
 .half {
   min-height: 100%;
