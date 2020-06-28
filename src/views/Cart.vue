@@ -8,7 +8,7 @@
         <b-list-group-item
           v-for="item in info"
           :key="item.id"
-          style="cursor:pointer;"
+          style="cursor:pointer"
           >1x {{ item.title
           }}<span style="color:#ffca19"> {{ item.price }}zł</span>
         </b-list-group-item>
@@ -68,10 +68,9 @@ export default {
 <style lang="scss">
 .containerCart {
   margin: 0 auto;
-  height: 90vh;
   width: 60%;
   padding: 2vw;
-  margin-top: 20vh;
+  margin-top: 15vh;
   text-align: center;
   font-weight: bold;
 }

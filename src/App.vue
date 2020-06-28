@@ -2,18 +2,20 @@
   <div id="app">
     <navbar />
     <router-view />
+    <footerbar />
   </div>
 </template>
 <script>
 // @ is an alias to /src
 import navbar from "@/components/navbar.vue";
 
-// import footerbar from "@/components/footerbar.vue";
+import footerbar from "@/components/footerbar.vue";
 
 export default {
   name: "App",
   components: {
-    navbar
+    navbar,
+    footerbar
   }
 };
 </script>
