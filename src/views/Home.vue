@@ -67,7 +67,7 @@ export default {
   },
   mounted() {
     axios
-      .get(this.api_url)
+      .get(this.api_url + "/cards?_sort=title:ASC")
       .then(response => (this.info = response.data))
       .catch(error => console.log(error))
       .finally(() => (this.loading = false));
