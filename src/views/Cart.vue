@@ -44,7 +44,7 @@ export default {
     },
     send() {
       window.open(
-        `mailto:makoteq@gmail.com?subject=cardshop&body=Shopping cart content:%0D%0A${this.content}`
+        `mailto:makoteq@gmail.com?subject=cardshop&body=Price:${this.fullprice}%0D%0A Shopping cart content:%0D%0A${this.content}`
       );
     }
   },

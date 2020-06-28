@@ -15,7 +15,7 @@
         <div class="half">
           <span class="header">{{ item.title }}</span
           ><br />
-          <span class="price">{{ item.price }}zł</span><br />
+          <span class="price">{{ (item.price * 4.4).toFixed(2) }}zł</span><br />
           <span class="qty"> Quantity:{{ item.qty }}</span>
           <br />
           <img
