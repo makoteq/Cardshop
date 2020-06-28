@@ -8,7 +8,7 @@
         <b-list-group-item
           v-for="item in info"
           :key="item.id"
-          style="cursor:pointer"
+          style="cursor:pointer;"
           >1x {{ item.title
           }}<span style="color:#ffca19"> {{ item.price }}zł</span>
         </b-list-group-item>
@@ -32,7 +32,8 @@ export default {
   data() {
     return {
       info: null,
-      fullprice: 0
+      fullprice: 0,
+      content: ""
     };
   },
   methods: {
@@ -43,7 +44,7 @@ export default {
     },
     send() {
       window.open(
-        "mailto:makoteq@gmail.com?subject=cardshop&body=Shopping cart content:"
+        `mailto:makoteq@gmail.com?subject=cardshop&body=Shopping cart content:%0D%0A${this.content}`
       );
     }
   },
@@ -56,8 +57,10 @@ export default {
         let price = this.fullprice.toFixed(2);
         console.log(price);
         this.fullprice = parseFloat(price);
+        this.content += "1x " + element.title + "%0D%0A";
       });
     }
+
     console.log(this.info);
   }
 };
@@ -65,7 +68,7 @@ export default {
 <style lang="scss">
 .containerCart {
   margin: 0 auto;
-  height: 80vh;
+  height: 90vh;
   width: 60%;
   padding: 2vw;
   margin-top: 20vh;

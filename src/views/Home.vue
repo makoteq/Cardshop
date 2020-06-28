@@ -1,42 +1,45 @@
 <template>
-  <div>
+  <div class="container">
     <input
       class="input"
       type="text"
       placeholder="Search title.."
       name="search"
     />
-    <div v-show="loading" class="sk-circle">
-      <div class="sk-circle1 sk-child"></div>
-      <div class="sk-circle2 sk-child"></div>
-      <div class="sk-circle3 sk-child"></div>
-      <div class="sk-circle4 sk-child"></div>
-      <div class="sk-circle5 sk-child"></div>
-      <div class="sk-circle6 sk-child"></div>
-      <div class="sk-circle7 sk-child"></div>
-      <div class="sk-circle8 sk-child"></div>
-      <div class="sk-circle9 sk-child"></div>
-      <div class="sk-circle10 sk-child"></div>
-      <div class="sk-circle11 sk-child"></div>
-      <div class="sk-circle12 sk-child"></div>
-    </div>
-    <div class="container">
-      <div v-for="item in info" :key="item.id" class="item">
-        <div style=" text-align: center;" class="half">
-          <img :src="item.img.url" width="50%" alt="" />
-        </div>
-        <div class="half">
-          <span class="header">{{ item.title }}</span
-          ><br />
-          <span class="price">{{ item.price }}zł</span>
-          <br />
-          <img
-            @click="add(item.id, item.title, item.price)"
-            class="addtocart"
-            src="../assets/shopping-cart.svg"
-            width="40"
-            alt=""
-          />
+
+    <div class="containerIn">
+      <div v-show="loading" class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+      <div class="itemContainer">
+        <div v-for="item in info" :key="item.id" class="item">
+          <div style=" text-align: center;" class="half">
+            <img :src="item.img.url" width="50%" alt="" />
+          </div>
+          <div class="half">
+            <span class="header">{{ item.title }}</span
+            ><br />
+            <span class="price">{{ item.price }}zł</span>
+            <br />
+            <img
+              @click="add(item.id, item.title, item.price)"
+              class="addtocart"
+              src="../assets/shopping-cart.svg"
+              width="40"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -83,8 +86,12 @@ export default {
 </script>
 <style lang="scss">
 .container {
+  width: 100vw;
+  min-height: 90vh;
+}
+.containerIn {
   margin: 0 auto;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   padding: 2vw;
   float: left;
@@ -105,6 +112,7 @@ export default {
   text-align: left;
   min-height: 200px;
   margin: 0 auto;
+  margin-bottom: 2vh;
 }
 .half {
   min-height: 100%;
