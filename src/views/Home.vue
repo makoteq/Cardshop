@@ -5,10 +5,11 @@
       type="text"
       placeholder="Search title.."
       name="search"
+      v-model="search"
     />
     <loading v-show="loading" />
     <div class="container">
-      <div v-for="item in info" :key="item.id" class="item">
+      <div v-for="item in filteredList" :key="item.id" class="item">
         <div style=" text-align: center;" class="half">
           <img :src="item.img.url" width="50%" alt="" />
         </div>
@@ -40,13 +41,21 @@ export default {
   name: "Home",
   data() {
     return {
-      info: null,
+      info: [],
       api_url: process.env.VUE_APP_API_URL || "http://localhost:1337",
-      loading: true
+      loading: true,
+      search: ""
     };
   },
   components: {
     loading
+  },
+  computed: {
+    filteredList() {
+      return this.info.filter(item => {
+        return item.title.toLowerCase().includes(this.search.toLowerCase());
+      });
+    }
   },
   methods: {
     add(id, title, price) {
@@ -65,7 +74,7 @@ export default {
       localStorage.setItem("data", JSON.stringify(data));
     }
   },
-  mounted() {
+  created() {
     axios
       .get(this.api_url + "/cards?_sort=title:ASC")
       .then(response => (this.info = response.data))
